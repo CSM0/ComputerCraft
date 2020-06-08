@@ -23,8 +23,9 @@ end--end function
 function SocksListener()
     while true do
         ClientID, ClientMsg, protocol = rednet.receive()
-        if protcol ~= nil then
-            if protcol == ProtocolName then
+        print("DEBUG: Packet: "..ClientMsg.."[CAP]")
+        if protocol ~= nil then
+            if protocol == ProtocolName then
                 if string.find(ClientMsg, "|") then
                     if sep == nil then
                         sep = "|";
